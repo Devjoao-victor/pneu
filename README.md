@@ -1,2 +1,2 @@
 # pneu
- school repository
+ school repository os pneu ne
