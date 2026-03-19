@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<title>Sistema da Loja</title>
+
+<style>
+
+body{
+font-family: Arial;
+background:#f4f4f4;
+margin:40px;
+}
+
+h1{
+text-align:center;
+}
+
+form{
+background:white;
+padding:20px;
+margin-bottom:30px;
+border-radius:8px;
+box-shadow:0px 0px 5px rgba(0,0,0,0.2);
+}
+
+input{
+display:block;
+margin-bottom:10px;
+padding:6px;
+width:200px;
+}
+
+button{
+padding:8px;
+background:#2c7be5;
+color:white;
+border:none;
+border-radius:4px;
+cursor:pointer;
+}
+
+button:hover{
+background:#1a5dcc;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h1>Sistema da Loja</h1>
+
+<h2>Cadastrar Cliente</h2>
+<form action="salvar_cliente.php" method="POST">
+
+Nome
+<input type="text" name="cliente">
+
+CPF
+<input type="text" name="cpf">
+
+<h3>Endereço</h3>
+
+Rua
+<input type="text" name="rua">
+
+Bairro
+<input type="text" name="bairro">
+
+Número
+<input type="number" name="numero">
+
+Complemento
+<input type="text" name="complemento">
+
+<button type="submit">Cadastrar Cliente</button>
+
+</form>
+
+<h2>Cadastrar Vendedor</h2>
+<form action="salvar_vendedor.php" method="POST">
+
+Nome
+<input type="text" name="nome">
+
+Quantidade de vendas
+<input type="number" name="quantidade_vendas">
+
+<button type="submit">Cadastrar Vendedor</button>
+
+</form>
+
+<h2>Cadastrar Fornecedor</h2>
+<form action="salvar_fornecedor.php" method="POST">
+
+Nome da empresa
+<input type="text" name="nome_empresa">
+
+CNPJ
+<input type="text" name="cnpj">
+
+Quantidade de produtos
+<input type="number" name="produto_quantidade">
+
+Preço
+<input type="number" step="0.01" name="preco">
+
+<h3>Endereço do fornecedor</h3>
+
+Rua
+<input type="text" name="rua">
+
+Bairro
+<input type="text" name="bairro">
+
+Número
+<input type="number" name="numero">
+
+Complemento
+<input type="text" name="complemento">
+
+<button type="submit">Cadastrar Fornecedor</button>
+
+</form>
+
+<h2>Cadastrar Estoque</h2>
+<form action="salvar_estoque.php" method="POST">
+
+Quantidade de calças
+<input type="number" name="quantidade_calcas">
+
+Preço de venda
+<input type="number" step="0.01" name="preco_venda">
+
+ID vendedor
+<input type="number" name="vendedor_id">
+
+<button type="submit">Cadastrar Estoque</button>
+
+</form>
+
+<h2>Registrar Venda</h2>
+<form action="salvar_venda.php" method="POST">
+
+ID cliente
+<input type="number" name="cliente_id">
+
+ID vendedor
+<input type="number" name="vendedor_id">
+
+Quantidade vendida
+<input type="number" name="quantidade_vendas">
+
+Preço
+<input type="number" step="0.01" name="preco">
+
+Data
+<input type="date" name="data">
+
+<button type="submit">Registrar Venda</button>
+
+</form>
+
+</body>
+</html>
+
