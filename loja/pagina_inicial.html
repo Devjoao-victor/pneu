@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<title>Urban Atelier</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:"Helvetica", Arial;
+}
+
+body{
+background:#0b0b0b;
+color:white;
+overflow-x:hidden;
+}
+
+/* NAVBAR */
+
+header{
+position:fixed;
+width:100%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:25px 60px;
+background:rgba(0,0,0,0.5);
+backdrop-filter:blur(6px);
+z-index:1000;
+}
+
+.logo{
+font-size:22px;
+letter-spacing:4px;
+font-weight:300;
+}
+
+/* BOTÃO MENU */
+
+#menuBtn{
+font-size:28px;
+cursor:pointer;
+}
+
+/* MENU LATERAL */
+
+#sideMenu{
+position:fixed;
+top:0;
+right:-220px;
+width:220px;
+height:100%;
+background:#111;
+padding:80px 30px;
+display:flex;
+flex-direction:column;
+gap:25px;
+transition:0.4s;
+z-index:2000;
+}
+
+#sideMenu a{
+color:white;
+text-decoration:none;
+font-size:16px;
+letter-spacing:2px;
+opacity:0.8;
+transition:0.3s;
+}
+
+#sideMenu a:hover{
+opacity:1;
+}
+
+#sideMenu.active{
+right:0;
+}
+
+/* BOTÃO FECHAR */
+
+#closeMenu{
+position:absolute;
+top:20px;
+right:20px;
+font-size:22px;
+cursor:pointer;
+opacity:0.7;
+}
+
+#closeMenu:hover{
+opacity:1;
+}
+
+/* OVERLAY */
+
+#overlay{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.6);
+opacity:0;
+pointer-events:none;
+transition:0.4s;
+z-index:1500;
+}
+
+#overlay.show{
+opacity:1;
+pointer-events:auto;
+}
+
+/* HERO */
+
+.hero{
+height:100vh;
+background:url("https://images.unsplash.com/photo-1490481651871-ab68de25d43d") center/cover;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+}
+
+.hero h1{
+font-size:65px;
+font-weight:200;
+letter-spacing:6px;
+animation:fade 2s;
+}
+
+.hero p{
+margin-top:20px;
+opacity:0.8;
+}
+
+/* PRODUTOS */
+
+.produtos{
+padding:120px 10%;
+text-align:center;
+}
+
+.grid{
+margin-top:60px;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:40px;
+}
+
+.card{
+position:relative;
+overflow:hidden;
+cursor:pointer;
+}
+
+.card img{
+width:100%;
+height:420px;
+object-fit:cover;
+transition:0.6s;
+}
+
+.card:hover img{
+transform:scale(1.1);
+}
+
+.info{
+position:absolute;
+bottom:0;
+width:100%;
+background:rgba(0,0,0,0.6);
+padding:20px;
+opacity:0;
+transition:0.4s;
+}
+
+.card:hover .info{
+opacity:1;
+}
+
+/* SOBRE */
+
+.sobre{
+display:flex;
+gap:60px;
+align-items:center;
+padding:120px 10%;
+flex-wrap:wrap;
+}
+
+.sobre img{
+width:500px;
+max-width:100%;
+}
+
+.texto{
+max-width:500px;
+}
+
+.texto h2{
+font-weight:200;
+font-size:40px;
+margin-bottom:20px;
+}
+
+/* ANIMAÇÕES */
+
+.fade-in{
+opacity:0;
+transform:translateY(40px);
+transition:1s;
+}
+
+.fade-in.show{
+opacity:1;
+transform:translateY(0);
+}
+
+/* FOOTER */
+
+footer{
+text-align:center;
+padding:50px;
+background:black;
+opacity:0.7;
+}
+
+@keyframes fade{
+0%{
+opacity:0;
+transform:translateY(40px);
+}
+100%{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">URBAN</div>
+
+<div id="menuBtn">☰</div>
+
+</header>
+
+
+<!-- MENU LATERAL -->
+
+<nav id="sideMenu">
+
+<div id="closeMenu">✕</div>
+
+<a href="#">Home</a>
+<a href="#">Coleção</a>
+<a href="#">Sobre</a>
+<a href="#">Contato</a>
+
+</nav>
+
+<div id="overlay"></div>
+
+
+<section class="hero">
+
+<div>
+<h1>NOVA COLEÇÃO</h1>
+<p>Minimalismo urbano em cada detalhe</p>
+</div>
+
+</section>
+
+
+<section class="produtos fade-in">
+
+<h2>Coleção</h2>
+
+<div class="grid">
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b">
+
+<div class="info">
+<h3>Calça Jeans Slim</h3>
+<p>R$149</p>
+</div>
+
+</div>
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1503341504253-dff4815485f1">
+
+<div class="info">
+<h3>Calça Cargo</h3>
+<p>R$179</p>
+</div>
+
+</div>
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1516826957135-700dedea698c">
+
+<div class="info">
+<h3>Calça Street</h3>
+<p>R$199</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<section class="sobre fade-in">
+
+<img src="https://images.unsplash.com/photo-1520975916090-3105956dac38">
+
+<div class="texto">
+
+<h2>Nossa Marca</h2>
+
+<p>
+Criamos roupas urbanas com design minimalista e materiais premium.
+Cada peça é feita para unir conforto, elegância e estilo contemporâneo.
+</p>
+
+</div>
+
+</section>
+
+
+<footer>
+
+<p>© 2026 Urban Atelier</p>
+
+</footer>
+
+
+<script>
+
+/* ANIMAÇÃO AO ROLAR */
+
+const elementos = document.querySelectorAll(".fade-in")
+
+window.addEventListener("scroll", () => {
+
+const alturaTela = window.innerHeight
+
+elementos.forEach(el => {
+
+const topo = el.getBoundingClientRect().top
+
+if(topo < alturaTela - 100){
+
+el.classList.add("show")
+
+}else{
+
+el.classList.remove("show")
+
+}
+
+})
+
+})
+
+
+/* MENU LATERAL */
+
+const menuBtn = document.querySelector("#menuBtn")
+const sideMenu = document.querySelector("#sideMenu")
+const overlay = document.querySelector("#overlay")
+const closeMenu = document.querySelector("#closeMenu")
+
+menuBtn.addEventListener("click", () => {
+
+sideMenu.classList.add("active")
+overlay.classList.add("show")
+
+})
+
+closeMenu.addEventListener("click", () => {
+
+sideMenu.classList.remove("active")
+overlay.classList.remove("show")
+
+})
+
+overlay.addEventListener("click", () => {
+
+sideMenu.classList.remove("active")
+overlay.classList.remove("show")
+
+})
+
+</script>
+
+</body>
+</html> 
